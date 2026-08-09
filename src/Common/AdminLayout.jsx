@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-import "../assets/css/admin.css";
+import "../assets/CSS/admin.css";
 
 export default function AdminLayout({ children }) {
   return (
