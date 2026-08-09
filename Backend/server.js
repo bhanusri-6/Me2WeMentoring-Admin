@@ -4,6 +4,8 @@ require("dotenv").config();
 
 const therapyRoutes = require("./routes/therapyRoutes");
 const testimonialRoutes = require("./routes/testimonialRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+
 const app = express();
 
 app.use(cors());
@@ -11,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/uploads", express.static("uploads"));
+app.use("/api/admin", adminRoutes);
 
 app.use("/api/therapies", therapyRoutes);
 app.use("/api/testimonials", testimonialRoutes);

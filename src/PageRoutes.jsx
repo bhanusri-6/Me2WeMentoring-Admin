@@ -2,19 +2,22 @@ import { Routes, Route } from "react-router-dom";
 
 import Dashboard from "./Pages/Dashboard";
 import Testimonals from "./Pages/Testimonals/Testimonals";
-
+import ProtectedRoute from "./Common/ProtectedRoute";
 import TherapyList from "./Pages/Therapy/TherapyList";
 import {
   TherapyCreate,
   TherapyEdit,
 } from "./Pages/Therapy/TherapyForm";
+import Login from "./Pages/Login/LoginPage";
 
 const PageRoutes = () => {
   return (
     <div>
       <Routes>
+        <Route path="/" element={<Login />} />
+        <Route element={<ProtectedRoute />}></Route>
         {/* Dashboard */}
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
 
         {/* Testimonials */}
         <Route

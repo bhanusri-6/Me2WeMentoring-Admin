@@ -107,7 +107,7 @@ const TherapyList = () => {
                 {/* Image */}
                 <div className="therapy-admin-image">
                   <img
-                    src={therapy.thumbnail}
+                    src={`http://localhost:5000${therapy.thumbnail}`}
                     alt={therapy.title}
                   />
                 </div>
