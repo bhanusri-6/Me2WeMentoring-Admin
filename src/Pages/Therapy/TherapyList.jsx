@@ -4,6 +4,7 @@ import AdminLayout from "../../Common/AdminLayout";
 import "./Therapy.css";
 
 const API_URL = `${import.meta.env.VITE_API_URL}/api/therapies`;
+const IMAGE_URL = `${import.meta.env.VITE_API_URL}`;
 
 const TherapyList = () => {
   const navigate = useNavigate();
@@ -107,7 +108,7 @@ const TherapyList = () => {
                 {/* Image */}
                 <div className="therapy-admin-image">
                   <img
-                    src={`http://localhost:5000${therapy.thumbnail}`}
+                    src={`${IMAGE_URL}${therapy.thumbnail}`}
                     alt={therapy.title}
                   />
                 </div>
