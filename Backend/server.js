@@ -12,7 +12,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://me2-we-mentoring-admin.vercel.app"
+      "https://me2-we-mentoring-admin.vercel.app/",
+      "https://me2-we-mentoring.vercel.app/",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true
