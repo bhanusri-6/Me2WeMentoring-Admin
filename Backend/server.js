@@ -8,23 +8,8 @@ const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://me2-we-mentoring-admin.vercel.app"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true
-  })
-);
-
+app.use(cors());
 app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true
-  })
-);
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/uploads", express.static("uploads"));
