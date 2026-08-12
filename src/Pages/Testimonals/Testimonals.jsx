@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import "./Testimonals.css";
 import AdminLayout from "../../Common/AdminLayout";
 
-const API_URL = `${import.meta.env.VITE_API_URL}/api`;
-const IMAGE_URL = `${import.meta.env.VITE_API_URL}`;
+const API_URL = "http://localhost:5000/api";
+const IMAGE_URL = "http://localhost:5000";
 
 export default function Testimonals() {
   const [testimonials, setTestimonials] = useState([]);
