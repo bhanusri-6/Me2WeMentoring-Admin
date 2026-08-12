@@ -109,7 +109,7 @@ const handleSubmit = async (e) => {
     );
 
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/therapies`,
+      `${import.meta.env.Vite_Api_Url}/api/therapies`,
       {
         method: "POST",
         body: formData,
