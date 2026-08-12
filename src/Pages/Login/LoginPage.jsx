@@ -2,12 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 
-const API_URL = import.meta.env.VITE_API_URL;
-
 const Login = () => {
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
+
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -42,7 +41,7 @@ const Login = () => {
       setLoading(true);
 
       const response = await fetch(
-        `${API_URL}/api/admin/login`,
+        "http://localhost:5000/api/admin/login",
         {
           method: "POST",
           headers: {
@@ -67,13 +66,10 @@ const Login = () => {
         JSON.stringify(result.admin)
       );
 
-      navigate("/dashboard", {
-        replace: true,
-      });
-
+      navigate("/dashboard");
     } catch (error) {
-      console.error("Login error:", error);
-      alert("Unable to connect to server");
+      console.error(error);
+      alert("Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -144,7 +140,6 @@ const Login = () => {
                 placeholder="Enter email"
                 value={formData.email}
                 onChange={handleChange}
-                required
               />
 
             </div>
@@ -169,7 +164,6 @@ const Login = () => {
                   placeholder="Enter password"
                   value={formData.password}
                   onChange={handleChange}
-                  required
                 />
 
                 <button
@@ -177,11 +171,13 @@ const Login = () => {
                   className="eye-btn"
                   onClick={() =>
                     setShowPassword(
-                      (prev) => !prev
+                      !showPassword
                     )
                   }
                 >
-                  {showPassword ? "🙈" : "👁"}
+                  {showPassword
+                    ? "🙈"
+                    : "👁"}
                 </button>
 
               </div>
@@ -207,7 +203,7 @@ const Login = () => {
 
             </div>
 
-            {/* LOGIN */}
+            {/* BUTTON */}
 
             <button
               type="submit"
@@ -222,7 +218,9 @@ const Login = () => {
           </form>
 
           <div className="bottom-text">
+
             © 2026 Me2We Mentoring
+
           </div>
 
         </div>
